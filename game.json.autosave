@@ -411,6 +411,10 @@
             {
               "name": "Tween",
               "type": "Tween::TweenBehavior"
+            },
+            {
+              "name": "grapple_behaviour",
+              "type": "grapple_behaviour::grapple_behaviour"
             }
           ],
           "animations": [
@@ -605,6 +609,25 @@
               ]
             }
           ]
+        },
+        {
+          "bold": false,
+          "italic": false,
+          "name": "debug_text",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "behaviors": [],
+          "string": "Text",
+          "font": "",
+          "characterSize": 40,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
         }
       ],
       "events": [
@@ -827,28 +850,6 @@
             {
               "type": {
                 "inverted": false,
-                "value": "Delete"
-              },
-              "parameters": [
-                "grapple",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "Delete"
-              },
-              "parameters": [
-                "grapple_helper",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
                 "value": "grapple_behaviour::player_behaviour::fire_grapple"
               },
               "parameters": [
@@ -858,6 +859,44 @@
                 "Tween",
                 "grapple_helper",
                 "player.PointY(\"grapple_launch\")"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "grapple_behaviour::grapple_behaviour::grapple_finished"
+              },
+              "parameters": [
+                "grapple",
+                "grapple_behaviour",
+                "Tween",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "grapple_behaviour::player_behaviour::return_grapple"
+              },
+              "parameters": [
+                "player",
+                "player_behaviour",
+                "grapple",
+                "Tween",
+                "grapple_helper",
+                ""
               ],
               "subInstructions": []
             }
@@ -882,136 +921,6 @@
           ],
           "actions": [],
           "events": [
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "Distance"
-                  },
-                  "parameters": [
-                    "player",
-                    "grapple",
-                    "300",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Arreter"
-                  },
-                  "parameters": [
-                    "grapple"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ModVarObjetTxt"
-                  },
-                  "parameters": [
-                    "grapple",
-                    "state",
-                    "=",
-                    "\"returning\""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "VarObjetTxt"
-                  },
-                  "parameters": [
-                    "grapple",
-                    "state",
-                    "=",
-                    "\"returning\""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "AddForceVersPos"
-                  },
-                  "parameters": [
-                    "grapple",
-                    "player.PointX(\"grapple_launch\")",
-                    "player.PointY(\"grapple_launch\")",
-                    "800",
-                    "0"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Distance"
-                  },
-                  "parameters": [
-                    "player",
-                    "grapple",
-                    "50",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "VarObjetTxt"
-                  },
-                  "parameters": [
-                    "grapple",
-                    "state",
-                    "=",
-                    "\"returning\""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "grapple",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            },
             {
               "disabled": false,
               "folded": false,
@@ -1280,6 +1189,10 @@
           "type": "Tween::TweenBehavior"
         },
         {
+          "name": "grapple_behaviour",
+          "type": "grapple_behaviour::grapple_behaviour"
+        },
+        {
           "name": "player_behaviour",
           "type": "grapple_behaviour::player_behaviour"
         }
@@ -1509,11 +1422,23 @@
                       "parameters": [
                         "grapple",
                         "tween",
-                        "\"grapple\"",
+                        "\"grapple_launch\"",
                         "grapple_helper.X()",
                         "grapple_helper.Y()",
                         "\"easeOutQuad\"",
                         "200",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "grapple_behaviour::player_behaviour::SetPropertygrapple_loaded"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
                         ""
                       ],
                       "subInstructions": []
@@ -1570,6 +1495,158 @@
                 }
               ],
               "objectGroups": []
+            },
+            {
+              "description": "Returns the grapple to the launcher",
+              "fullName": "Return grapple",
+              "functionType": "Action",
+              "name": "return_grapple",
+              "sentence": "Return _PARAM2_ to _PARAM0_ and remove the helper _PARAM4_",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::RemoveTween"
+                      },
+                      "parameters": [
+                        "grapple",
+                        "tween",
+                        "\"grapple_return\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectPositionTween"
+                      },
+                      "parameters": [
+                        "grapple",
+                        "tween",
+                        "\"grapple\"return\"",
+                        "Object.PointX(\"grapple_launch\")",
+                        "Object.PointY(\"grapple_launch\")",
+                        "\"easeOutQuad\"",
+                        "200",
+                        "no"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Distance"
+                      },
+                      "parameters": [
+                        "grapple",
+                        "Object",
+                        "50",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "grapple_helper",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "grapple",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "grapple_behaviour::player_behaviour::SetPropertygrapple_loaded"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "yes"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "grapple_behaviour::player_behaviour",
+                  "type": "behavior"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "",
+                  "name": "grapple",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "objectList"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "",
+                  "name": "tween",
+                  "optional": false,
+                  "supplementaryInformation": "Tween::TweenBehavior",
+                  "type": "behavior"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "",
+                  "name": "grapple_helper",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "objectList"
+                }
+              ],
+              "objectGroups": []
             }
           ],
           "propertyDescriptors": [
@@ -1590,6 +1667,86 @@
               "name": "distance_to_travel"
             }
           ]
+        },
+        {
+          "description": "",
+          "fullName": "Grapple",
+          "name": "grapple_behaviour",
+          "objectType": "Sprite",
+          "eventsFunctions": [
+            {
+              "description": "The grapple has reached its destination and not collided with any platform",
+              "fullName": "Grapple finished",
+              "functionType": "Condition",
+              "name": "grapple_finished",
+              "sentence": "_PARAM0_ has reached its destination and not collided with a platform",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::HasFinished"
+                      },
+                      "parameters": [
+                        "Object",
+                        "tween",
+                        "\"grapple_launch\""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "grapple_behaviour::grapple_behaviour",
+                  "type": "behavior"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "",
+                  "name": "tween",
+                  "optional": false,
+                  "supplementaryInformation": "Tween::TweenBehavior",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": []
         }
       ]
     }
