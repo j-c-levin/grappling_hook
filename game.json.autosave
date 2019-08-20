@@ -1634,7 +1634,7 @@
                         "value": "Delete"
                       },
                       "parameters": [
-                        "Grapple",
+                        "grapple",
                         ""
                       ],
                       "subInstructions": []
@@ -1645,7 +1645,7 @@
                         "value": "Delete"
                       },
                       "parameters": [
-                        "Grapple_Helper",
+                        "grapple_helper",
                         ""
                       ],
                       "subInstructions": []
@@ -1689,7 +1689,7 @@
                   "codeOnly": false,
                   "defaultValue": "",
                   "description": "Grapple to be reloaded",
-                  "name": "Grapple",
+                  "name": "grapple",
                   "optional": false,
                   "supplementaryInformation": "Sprite",
                   "type": "objectList"
@@ -1707,7 +1707,7 @@
                   "codeOnly": false,
                   "defaultValue": "",
                   "description": "The grapple helper",
-                  "name": "Grapple_Helper",
+                  "name": "grapple_helper",
                   "optional": false,
                   "supplementaryInformation": "Sprite",
                   "type": "objectList"

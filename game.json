@@ -1046,40 +1046,6 @@
                 }
               ],
               "events": []
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "VarObjetTxt"
-                  },
-                  "parameters": [
-                    "grapple",
-                    "state",
-                    "=",
-                    "\"swinging\""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "grapple",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
             }
           ]
         }
@@ -1429,7 +1395,7 @@
               "fullName": "Return grapple",
               "functionType": "Action",
               "name": "return_grapple",
-              "sentence": "Return _PARAM2_ to _PARAM0_ and remove the helper _PARAM4_",
+              "sentence": "Return _PARAM2_ to _PARAM0_",
               "events": [
                 {
                   "disabled": false,
@@ -1620,7 +1586,7 @@
               "fullName": "Reload grapple",
               "functionType": "Action",
               "name": "reload_grapple",
-              "sentence": "Reload _PARAM0_ with _PARAM2_ and remove _PARAM4_",
+              "sentence": "Reload _PARAM0_ and remove _PARAM2_ and _PARAM4_",
               "events": [
                 {
                   "disabled": false,
@@ -1634,7 +1600,7 @@
                         "value": "Delete"
                       },
                       "parameters": [
-                        "Grapple",
+                        "grapple",
                         ""
                       ],
                       "subInstructions": []
@@ -1645,7 +1611,7 @@
                         "value": "Delete"
                       },
                       "parameters": [
-                        "Grapple_Helper",
+                        "grapple_helper",
                         ""
                       ],
                       "subInstructions": []
@@ -1689,7 +1655,7 @@
                   "codeOnly": false,
                   "defaultValue": "",
                   "description": "Grapple to be reloaded",
-                  "name": "Grapple",
+                  "name": "grapple",
                   "optional": false,
                   "supplementaryInformation": "Sprite",
                   "type": "objectList"
@@ -1707,7 +1673,7 @@
                   "codeOnly": false,
                   "defaultValue": "",
                   "description": "The grapple helper",
-                  "name": "Grapple_Helper",
+                  "name": "grapple_helper",
                   "optional": false,
                   "supplementaryInformation": "Sprite",
                   "type": "objectList"
