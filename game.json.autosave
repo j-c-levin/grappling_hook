@@ -318,21 +318,6 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "debug",
-          "width": 0,
-          "x": 515.588,
-          "y": 82.5643,
-          "zOrder": 5,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
         }
       ],
       "objects": [
@@ -639,25 +624,6 @@
               ]
             }
           ]
-        },
-        {
-          "bold": false,
-          "italic": false,
-          "name": "debug",
-          "smoothed": true,
-          "tags": "",
-          "type": "TextObject::Text",
-          "underlined": false,
-          "variables": [],
-          "behaviors": [],
-          "string": "Text",
-          "font": "",
-          "characterSize": 40,
-          "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
-          }
         }
       ],
       "events": [
@@ -1030,16 +996,39 @@
             {
               "type": {
                 "inverted": false,
-                "value": "CollisionNP"
+                "value": "BuiltinCommonInstructions::Or"
               },
-              "parameters": [
-                "grapple",
-                "platform",
-                "",
-                "",
-                ""
-              ],
-              "subInstructions": []
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "grapple",
+                    "platform",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "grapple",
+                    "floor",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ]
             }
           ],
           "actions": [
@@ -1570,7 +1559,7 @@
                         "grapple.X()",
                         "grapple.Y()",
                         "\"easeOutQuad\"",
-                        "200",
+                        "300",
                         ""
                       ],
                       "subInstructions": []
@@ -1655,9 +1644,9 @@
                         "tween",
                         "\"climb_ledge\"",
                         "ledge.PointX(\"Center\")",
-                        "ledge.PointY(\"Center\") - 100",
+                        "ledge.PointY(\"Center\") - Object.Height()",
                         "\"easeOutQuad\"",
-                        "200",
+                        "300",
                         ""
                       ],
                       "subInstructions": []

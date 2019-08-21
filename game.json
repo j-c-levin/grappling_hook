@@ -996,16 +996,39 @@
             {
               "type": {
                 "inverted": false,
-                "value": "CollisionNP"
+                "value": "BuiltinCommonInstructions::Or"
               },
-              "parameters": [
-                "grapple",
-                "platform",
-                "",
-                "",
-                ""
-              ],
-              "subInstructions": []
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "grapple",
+                    "platform",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "grapple",
+                    "floor",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ]
             }
           ],
           "actions": [
@@ -1536,7 +1559,7 @@
                         "grapple.X()",
                         "grapple.Y()",
                         "\"easeOutQuad\"",
-                        "200",
+                        "300",
                         ""
                       ],
                       "subInstructions": []
@@ -1621,9 +1644,9 @@
                         "tween",
                         "\"climb_ledge\"",
                         "ledge.PointX(\"Center\")",
-                        "ledge.PointY(\"Center\") - 100",
+                        "ledge.PointY(\"Center\") - Object.Height()",
                         "\"easeOutQuad\"",
-                        "200",
+                        "300",
                         ""
                       ],
                       "subInstructions": []
