@@ -174,15 +174,6 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "NewObject-1-5.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "NewObject-1-5.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
         "file": "NewObject-1-6.png",
         "kind": "image",
         "metadata": "",
@@ -205,6 +196,15 @@
         "kind": "image",
         "metadata": "",
         "name": "NewObject-1-8.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "NewObject-1-5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewObject-1-5.png",
         "smoothed": true,
         "userAdded": true
       }
@@ -300,6 +300,21 @@
           "x": 478,
           "y": 262,
           "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "platform",
+          "width": 0,
+          "x": 101,
+          "y": 115,
+          "zOrder": 4,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -504,12 +519,12 @@
                       "points": [
                         {
                           "name": "ledge_left",
-                          "x": 20,
+                          "x": 15,
                           "y": 20
                         },
                         {
                           "name": "ledge_right",
-                          "x": 185,
+                          "x": 190,
                           "y": 20
                         }
                       ],
@@ -901,18 +916,44 @@
             {
               "type": {
                 "inverted": false,
-                "value": "grapple_behaviour::grapple_behaviour::ledge_collision"
+                "value": "grapple_behaviour::grapple_behaviour::can_grapple_attach"
               },
               "parameters": [
                 "grapple",
                 "grapple_behaviour",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "grapple",
                 "grapple_ledge",
-                "Platform"
+                "",
+                "",
+                ""
               ],
               "subInstructions": []
             }
           ],
           "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "grapple_behaviour::grapple_behaviour::attach_grapple"
+              },
+              "parameters": [
+                "grapple",
+                "grapple_behaviour",
+                "Tween",
+                ""
+              ],
+              "subInstructions": []
+            },
             {
               "type": {
                 "inverted": false,
@@ -922,7 +963,7 @@
                 "player",
                 "player_behaviour",
                 "Tween",
-                "grapple",
+                "grapple_ledge",
                 "Tween",
                 "grapple_ledge",
                 ""
@@ -940,7 +981,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "grapple_behaviour::grapple_behaviour::platform_collision"
+                "value": "grapple_behaviour::grapple_behaviour::can_grapple_attach"
               },
               "parameters": [
                 "grapple",
@@ -951,9 +992,36 @@
                 ""
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "grapple",
+                "platform",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
             }
           ],
           "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "grapple_behaviour::grapple_behaviour::attach_grapple"
+              },
+              "parameters": [
+                "grapple",
+                "grapple_behaviour",
+                "Tween",
+                ""
+              ],
+              "subInstructions": []
+            },
             {
               "type": {
                 "inverted": false,
@@ -1459,18 +1527,6 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "Tween::RemoveTween"
-                      },
-                      "parameters": [
-                        "grapple",
-                        "tween",
-                        "\"grapple_launch\""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
                         "value": "Tween::AddObjectPositionTween"
                       },
                       "parameters": [
@@ -1538,24 +1594,6 @@
                   "optional": false,
                   "supplementaryInformation": "Sprite",
                   "type": "objectList"
-                },
-                {
-                  "codeOnly": false,
-                  "defaultValue": "",
-                  "description": "grapple behaviour",
-                  "name": "behaviour",
-                  "optional": false,
-                  "supplementaryInformation": "grapple_behaviour::grapple_behaviour",
-                  "type": "behavior"
-                },
-                {
-                  "codeOnly": false,
-                  "defaultValue": "",
-                  "description": "tween behaviour",
-                  "name": "tween",
-                  "optional": false,
-                  "supplementaryInformation": "Tween::TweenBehavior",
-                  "type": "behavior"
                 }
               ],
               "objectGroups": []
@@ -1565,7 +1603,7 @@
               "fullName": "Climb ledge",
               "functionType": "Action",
               "name": "climb_ledge",
-              "sentence": "_PARAM0_ use _PARAM3_ to swing over _PARAM5_ ",
+              "sentence": "Swing _PARAM0_ over _PARAM3_ ",
               "events": [
                 {
                   "disabled": false,
@@ -1573,18 +1611,6 @@
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [],
                   "actions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "Tween::RemoveTween"
-                      },
-                      "parameters": [
-                        "grapple",
-                        "tween",
-                        "\"grapple_launch\""
-                      ],
-                      "subInstructions": []
-                    },
                     {
                       "type": {
                         "inverted": false,
@@ -1624,24 +1650,6 @@
                   "optional": false,
                   "supplementaryInformation": "grapple_behaviour::player_behaviour",
                   "type": "behavior"
-                },
-                {
-                  "codeOnly": false,
-                  "defaultValue": "",
-                  "description": "tween",
-                  "name": "tween",
-                  "optional": false,
-                  "supplementaryInformation": "Tween::TweenBehavior",
-                  "type": "behavior"
-                },
-                {
-                  "codeOnly": false,
-                  "defaultValue": "",
-                  "description": "The grapple",
-                  "name": "grapple",
-                  "optional": false,
-                  "supplementaryInformation": "Sprite",
-                  "type": "objectList"
                 },
                 {
                   "codeOnly": false,
@@ -2020,11 +2028,11 @@
           "objectType": "Sprite",
           "eventsFunctions": [
             {
-              "description": "The grapple has reached its destination and not collided with any platform",
+              "description": "The grapple has reached its destination and not attached",
               "fullName": "Grapple finished",
               "functionType": "Condition",
               "name": "grapple_finished",
-              "sentence": "_PARAM0_ has reached its destination and not collided with a platform",
+              "sentence": "_PARAM0_ has reached its destination and not attached",
               "events": [
                 {
                   "disabled": false,
@@ -2046,7 +2054,7 @@
                     {
                       "type": {
                         "inverted": true,
-                        "value": "grapple_behaviour::grapple_behaviour::Propertyis_swinging"
+                        "value": "grapple_behaviour::grapple_behaviour::Propertyis_attached"
                       },
                       "parameters": [
                         "Object",
@@ -2102,11 +2110,11 @@
               "objectGroups": []
             },
             {
-              "description": "Has the grapple collided with a platform",
-              "fullName": "Grapple swing",
+              "description": "Can the grapple attach",
+              "fullName": "Can grapple attach",
               "functionType": "Condition",
-              "name": "platform_collision",
-              "sentence": "_PARAM0_ collided with _PARAM2_",
+              "name": "can_grapple_attach",
+              "sentence": "_PARAM0_ can attach",
               "events": [
                 {
                   "disabled": false,
@@ -2115,22 +2123,8 @@
                   "conditions": [
                     {
                       "type": {
-                        "inverted": false,
-                        "value": "CollisionNP"
-                      },
-                      "parameters": [
-                        "Object",
-                        "platform",
-                        "",
-                        "",
-                        ""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
                         "inverted": true,
-                        "value": "grapple_behaviour::grapple_behaviour::Propertyis_swinging"
+                        "value": "grapple_behaviour::grapple_behaviour::Propertyis_attached"
                       },
                       "parameters": [
                         "Object",
@@ -2140,18 +2134,6 @@
                     }
                   ],
                   "actions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "grapple_behaviour::grapple_behaviour::SetPropertyis_swinging"
-                      },
-                      "parameters": [
-                        "Object",
-                        "Behavior",
-                        "yes"
-                      ],
-                      "subInstructions": []
-                    },
                     {
                       "type": {
                         "inverted": false,
@@ -2183,87 +2165,45 @@
                   "name": "Behavior",
                   "optional": false,
                   "supplementaryInformation": "grapple_behaviour::grapple_behaviour",
-                  "type": "behavior"
-                },
-                {
-                  "codeOnly": false,
-                  "defaultValue": "",
-                  "description": "The platform to be collided with",
-                  "name": "platform",
-                  "optional": false,
-                  "supplementaryInformation": "",
-                  "type": "objectList"
-                },
-                {
-                  "codeOnly": false,
-                  "defaultValue": "",
-                  "description": "behaviour",
-                  "name": "behaviour",
-                  "optional": false,
-                  "supplementaryInformation": "PlatformBehavior::PlatformBehavior",
                   "type": "behavior"
                 }
               ],
               "objectGroups": []
             },
             {
-              "description": "Has the grapple collided with a ledge edge",
-              "fullName": "Grapple ledge",
-              "functionType": "Condition",
-              "name": "ledge_collision",
-              "sentence": "_PARAM0_ has collided with _PARAM2_",
+              "description": "Attach the grapple",
+              "fullName": "Attach the grapple",
+              "functionType": "Action",
+              "name": "attach_grapple",
+              "sentence": "Attach _PARAM0_ and stop it moving",
               "events": [
                 {
                   "disabled": false,
                   "folded": false,
                   "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
+                  "conditions": [],
+                  "actions": [
                     {
                       "type": {
                         "inverted": false,
-                        "value": "CollisionNP"
+                        "value": "Tween::RemoveTween"
                       },
                       "parameters": [
                         "Object",
-                        "ledge",
-                        "",
-                        "",
-                        ""
+                        "tween",
+                        "\"grapple_launch\""
                       ],
                       "subInstructions": []
                     },
                     {
                       "type": {
-                        "inverted": true,
-                        "value": "grapple_behaviour::grapple_behaviour::Propertyis_swinging"
-                      },
-                      "parameters": [
-                        "Object",
-                        "Behavior"
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
                         "inverted": false,
-                        "value": "grapple_behaviour::grapple_behaviour::SetPropertyis_swinging"
+                        "value": "grapple_behaviour::grapple_behaviour::SetPropertyis_attached"
                       },
                       "parameters": [
                         "Object",
                         "Behavior",
                         "yes"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "SetReturnBoolean"
-                      },
-                      "parameters": [
-                        "True"
                       ],
                       "subInstructions": []
                     }
@@ -2293,11 +2233,11 @@
                 {
                   "codeOnly": false,
                   "defaultValue": "",
-                  "description": "Ledge to be climbed",
-                  "name": "ledge",
+                  "description": "",
+                  "name": "tween",
                   "optional": false,
-                  "supplementaryInformation": "Sprite",
-                  "type": "objectList"
+                  "supplementaryInformation": "Tween::TweenBehavior",
+                  "type": "behavior"
                 }
               ],
               "objectGroups": []
@@ -2307,10 +2247,10 @@
             {
               "value": "",
               "type": "Boolean",
-              "label": "Internal flag for whether the grapple is swinging the player",
+              "label": "Internal flag for whether the grapple is attached to something",
               "extraInformation": [],
               "hidden": true,
-              "name": "is_swinging"
+              "name": "is_attached"
             }
           ]
         }
