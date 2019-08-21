@@ -282,9 +282,9 @@
           "locked": false,
           "name": "platform",
           "width": 0,
-          "x": 164,
-          "y": 388,
-          "zOrder": -5,
+          "x": 176,
+          "y": 370,
+          "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -297,9 +297,24 @@
           "locked": false,
           "name": "platform",
           "width": 0,
-          "x": 448,
-          "y": 280,
-          "zOrder": -5,
+          "x": 478,
+          "y": 262,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "platform",
+          "width": 0,
+          "x": 101,
+          "y": 115,
+          "zOrder": 4,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -431,11 +446,6 @@
                       "image": "NewObject-1-2.png",
                       "points": [
                         {
-                          "name": "ledge_check",
-                          "x": 38.3438,
-                          "y": 16.4102
-                        },
-                        {
                           "name": "swing_point",
                           "x": -30,
                           "y": 15
@@ -509,13 +519,13 @@
                       "points": [
                         {
                           "name": "ledge_left",
-                          "x": 25,
-                          "y": 0
+                          "x": 20,
+                          "y": 20
                         },
                         {
                           "name": "ledge_right",
                           "x": 185,
-                          "y": 0
+                          "y": 20
                         }
                       ],
                       "originPoint": {
@@ -560,7 +570,7 @@
                       "originPoint": {
                         "name": "origine",
                         "x": 20,
-                        "y": 0.214844
+                        "y": 15
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -614,60 +624,133 @@
               ]
             }
           ]
-        },
-        {
-          "bold": false,
-          "italic": false,
-          "name": "debug_text",
-          "smoothed": true,
-          "tags": "",
-          "type": "TextObject::Text",
-          "underlined": false,
-          "variables": [],
-          "behaviors": [],
-          "string": "Text",
-          "font": "",
-          "characterSize": 40,
-          "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
-          }
         }
       ],
       "events": [
         {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
           "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
+          "folded": true,
+          "name": "Utilities",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
             {
-              "type": {
-                "inverted": false,
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "q"
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "q"
+                  ],
+                  "subInstructions": []
+                }
               ],
-              "subInstructions": []
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"mechanics_only\"",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
             }
           ],
-          "actions": [
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "disabled": false,
+          "folded": true,
+          "name": "Character controls",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
             {
-              "type": {
-                "inverted": false,
-                "value": "Scene"
-              },
-              "parameters": [
-                "",
-                "\"mechanics_only\"",
-                ""
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ],
+                  "subInstructions": []
+                }
               ],
-              "subInstructions": []
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "FlipX"
+                  },
+                  "parameters": [
+                    "player",
+                    "yes"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Right"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "FlipX"
+                  },
+                  "parameters": [
+                    "player",
+                    "no"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
             }
           ],
-          "events": []
+          "parameters": []
         },
         {
           "disabled": false,
@@ -730,7 +813,7 @@
                   "parameters": [
                     "grapple_ledge",
                     "=",
-                    "platform.Height()"
+                    "platform.Height() + 15"
                   ],
                   "subInstructions": []
                 }
@@ -738,70 +821,6 @@
               "events": []
             }
           ]
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "FlipX"
-              },
-              "parameters": [
-                "player",
-                "yes"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "Right"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "FlipX"
-              },
-              "parameters": [
-                "player",
-                "no"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
         },
         {
           "disabled": false,
@@ -897,7 +916,46 @@
             {
               "type": {
                 "inverted": false,
-                "value": "grapple_behaviour::grapple_behaviour::has_grapple_collided"
+                "value": "grapple_behaviour::grapple_behaviour::ledge_collision"
+              },
+              "parameters": [
+                "grapple",
+                "grapple_behaviour",
+                "grapple_ledge",
+                "Platform"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "grapple_behaviour::player_behaviour::climb_ledge"
+              },
+              "parameters": [
+                "player",
+                "player_behaviour",
+                "Tween",
+                "grapple",
+                "Tween",
+                "grapple_ledge",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "grapple_behaviour::grapple_behaviour::platform_collision"
               },
               "parameters": [
                 "grapple",
@@ -938,7 +996,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "grapple_behaviour::player_behaviour::is_close_enough_to_reload"
+                "value": "grapple_behaviour::player_behaviour::can_reload"
               },
               "parameters": [
                 "player",
@@ -972,65 +1030,6 @@
             }
           ],
           "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "DepartScene"
-              },
-              "parameters": [
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "CollisionPoint"
-                  },
-                  "parameters": [
-                    "grapple_ledge",
-                    "grapple.PointX(\"swing_check\")",
-                    "grapple.PointY(\"swing_check\")"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Tween::AddObjectPositionTween"
-                  },
-                  "parameters": [
-                    "player",
-                    "Tween",
-                    "\"grapple\"",
-                    "grapple_ledge.PointX(\"Center\")",
-                    "grapple_ledge.PointY(\"Center\") - player.Height()",
-                    "\"easeOutQuad\"",
-                    "200",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            }
-          ]
         }
       ],
       "layers": [
@@ -1577,6 +1576,331 @@
               "objectGroups": []
             },
             {
+              "description": "Make the player climb the ledge",
+              "fullName": "Climb ledge",
+              "functionType": "Action",
+              "name": "climb_ledge",
+              "sentence": "_PARAM0_ use _PARAM3_ to swing over _PARAM5_ ",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::RemoveTween"
+                      },
+                      "parameters": [
+                        "grapple",
+                        "tween",
+                        "\"grapple_launch\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectPositionTween"
+                      },
+                      "parameters": [
+                        "Object",
+                        "tween",
+                        "\"climb_ledge\"",
+                        "ledge.PointX(\"Center\")",
+                        "ledge.PointY(\"Center\") - 100",
+                        "\"easeOutQuad\"",
+                        "200",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "grapple_behaviour::player_behaviour",
+                  "type": "behavior"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "tween",
+                  "name": "tween",
+                  "optional": false,
+                  "supplementaryInformation": "Tween::TweenBehavior",
+                  "type": "behavior"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "The grapple",
+                  "name": "grapple",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "objectList"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "tween",
+                  "name": "tween",
+                  "optional": false,
+                  "supplementaryInformation": "Tween::TweenBehavior",
+                  "type": "behavior"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "The ledge to be swung over",
+                  "name": "ledge",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "objectList"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Is the player close enough to the grapple to reload it",
+              "fullName": "Can reload grapple",
+              "functionType": "Condition",
+              "name": "can_reload",
+              "sentence": "_PARAM0_ is close enough to reload _PARAM4_",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Distance"
+                      },
+                      "parameters": [
+                        "Object",
+                        "grapple",
+                        "50",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::Exists"
+                      },
+                      "parameters": [
+                        "grapple",
+                        "tween",
+                        "\"grapple_return\""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Distance"
+                      },
+                      "parameters": [
+                        "Object",
+                        "grapple",
+                        "50",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::Exists"
+                      },
+                      "parameters": [
+                        "Object",
+                        "tween",
+                        "\"player_swing\""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::RemoveTween"
+                      },
+                      "parameters": [
+                        "Object",
+                        "tween",
+                        "\"player_swing\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::HasFinished"
+                      },
+                      "parameters": [
+                        "Object",
+                        "tween",
+                        "\"climb_ledge\""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::RemoveTween"
+                      },
+                      "parameters": [
+                        "Object",
+                        "tween",
+                        "\"climb_ledge\""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "grapple_behaviour::player_behaviour",
+                  "type": "behavior"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Tween",
+                  "name": "tween",
+                  "optional": false,
+                  "supplementaryInformation": "Tween::TweenBehavior",
+                  "type": "behavior"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Tween",
+                  "name": "tween",
+                  "optional": false,
+                  "supplementaryInformation": "Tween::TweenBehavior",
+                  "type": "behavior"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "The grapple",
+                  "name": "grapple",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "objectList"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "behaviour",
+                  "name": "behaviour",
+                  "optional": false,
+                  "supplementaryInformation": "grapple_behaviour::grapple_behaviour",
+                  "type": "behavior"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "tween",
+                  "name": "tween",
+                  "optional": false,
+                  "supplementaryInformation": "Tween::TweenBehavior",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
               "description": "Reload the grapple",
               "fullName": "Reload grapple",
               "functionType": "Action",
@@ -1672,183 +1996,6 @@
                   "optional": false,
                   "supplementaryInformation": "Sprite",
                   "type": "objectList"
-                }
-              ],
-              "objectGroups": []
-            },
-            {
-              "description": "Is the player close enough to the grapple to reload it",
-              "fullName": "Close enough to reload",
-              "functionType": "Condition",
-              "name": "is_close_enough_to_reload",
-              "sentence": "_PARAM0_ is close enough to reload _PARAM4_",
-              "events": [
-                {
-                  "disabled": false,
-                  "folded": false,
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "Distance"
-                      },
-                      "parameters": [
-                        "Object",
-                        "grapple",
-                        "50",
-                        ""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "Tween::Exists"
-                      },
-                      "parameters": [
-                        "grapple",
-                        "tween",
-                        "\"grapple_return\""
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "SetReturnBoolean"
-                      },
-                      "parameters": [
-                        "True"
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "events": []
-                },
-                {
-                  "disabled": false,
-                  "folded": false,
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "Distance"
-                      },
-                      "parameters": [
-                        "Object",
-                        "grapple",
-                        "20",
-                        ""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "Tween::Exists"
-                      },
-                      "parameters": [
-                        "Object",
-                        "tween",
-                        "\"player_swing\""
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "Tween::RemoveTween"
-                      },
-                      "parameters": [
-                        "Object",
-                        "tween",
-                        "\"player_swing\""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "SetReturnBoolean"
-                      },
-                      "parameters": [
-                        "True"
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "events": []
-                }
-              ],
-              "parameters": [
-                {
-                  "codeOnly": false,
-                  "defaultValue": "",
-                  "description": "Object",
-                  "name": "Object",
-                  "optional": false,
-                  "supplementaryInformation": "Sprite",
-                  "type": "object"
-                },
-                {
-                  "codeOnly": false,
-                  "defaultValue": "",
-                  "description": "Behavior",
-                  "name": "Behavior",
-                  "optional": false,
-                  "supplementaryInformation": "grapple_behaviour::player_behaviour",
-                  "type": "behavior"
-                },
-                {
-                  "codeOnly": false,
-                  "defaultValue": "",
-                  "description": "Tween",
-                  "name": "tween",
-                  "optional": false,
-                  "supplementaryInformation": "Tween::TweenBehavior",
-                  "type": "behavior"
-                },
-                {
-                  "codeOnly": false,
-                  "defaultValue": "",
-                  "description": "Tween",
-                  "name": "tween",
-                  "optional": false,
-                  "supplementaryInformation": "Tween::TweenBehavior",
-                  "type": "behavior"
-                },
-                {
-                  "codeOnly": false,
-                  "defaultValue": "",
-                  "description": "The grapple",
-                  "name": "grapple",
-                  "optional": false,
-                  "supplementaryInformation": "Sprite",
-                  "type": "objectList"
-                },
-                {
-                  "codeOnly": false,
-                  "defaultValue": "",
-                  "description": "behaviour",
-                  "name": "behaviour",
-                  "optional": false,
-                  "supplementaryInformation": "grapple_behaviour::grapple_behaviour",
-                  "type": "behavior"
-                },
-                {
-                  "codeOnly": false,
-                  "defaultValue": "",
-                  "description": "tween",
-                  "name": "tween",
-                  "optional": false,
-                  "supplementaryInformation": "Tween::TweenBehavior",
-                  "type": "behavior"
                 }
               ],
               "objectGroups": []
@@ -1970,11 +2117,11 @@
               "objectGroups": []
             },
             {
-              "description": "Has the grapple collided with a platform and not a ledge",
+              "description": "Has the grapple collided with a platform",
               "fullName": "Grapple swing",
               "functionType": "Condition",
-              "name": "has_grapple_collided",
-              "sentence": "_PARAM0_ collided with _PARAM2_ and not _PARAM4_",
+              "name": "platform_collision",
+              "sentence": "_PARAM0_ collided with _PARAM2_",
               "events": [
                 {
                   "disabled": false,
@@ -2003,18 +2150,6 @@
                       "parameters": [
                         "Object",
                         "Behavior"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": true,
-                        "value": "CollisionPoint"
-                      },
-                      "parameters": [
-                        "ledge",
-                        "Object.PointX(\"ledge_check\")",
-                        "Object.PointY(\"ledge_check\")"
                       ],
                       "subInstructions": []
                     }
@@ -2082,11 +2217,98 @@
                   "optional": false,
                   "supplementaryInformation": "PlatformBehavior::PlatformBehavior",
                   "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Has the grapple collided with a ledge edge",
+              "fullName": "Grapple ledge",
+              "functionType": "Condition",
+              "name": "ledge_collision",
+              "sentence": "_PARAM0_ has collided with _PARAM2_",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "CollisionNP"
+                      },
+                      "parameters": [
+                        "Object",
+                        "ledge",
+                        "",
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "grapple_behaviour::grapple_behaviour::Propertyis_swinging"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "grapple_behaviour::grapple_behaviour::SetPropertyis_swinging"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "yes"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "object"
                 },
                 {
                   "codeOnly": false,
                   "defaultValue": "",
-                  "description": "The ledge to not grab",
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "grapple_behaviour::grapple_behaviour",
+                  "type": "behavior"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Ledge to be climbed",
                   "name": "ledge",
                   "optional": false,
                   "supplementaryInformation": "Sprite",
