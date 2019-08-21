@@ -284,7 +284,7 @@
           "width": 0,
           "x": 164,
           "y": 388,
-          "zOrder": 40,
+          "zOrder": -5,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -299,7 +299,7 @@
           "width": 0,
           "x": 448,
           "y": 280,
-          "zOrder": 51,
+          "zOrder": -5,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -431,7 +431,7 @@
                       "image": "NewObject-1-2.png",
                       "points": [
                         {
-                          "name": "swing_check",
+                          "name": "ledge_check",
                           "x": 38.3438,
                           "y": 16.4102
                         },
@@ -736,25 +736,6 @@
                 }
               ],
               "events": []
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Cache"
-                  },
-                  "parameters": [
-                    "grapple_ledge"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
             }
           ]
         },
@@ -923,6 +904,7 @@
                 "grapple_behaviour",
                 "platform",
                 "Platform",
+                "grapple_ledge",
                 ""
               ],
               "subInstructions": []
@@ -1988,11 +1970,11 @@
               "objectGroups": []
             },
             {
-              "description": "Has the grapple collided with a platform",
+              "description": "Has the grapple collided with a platform and not a ledge",
               "fullName": "Grapple swing",
               "functionType": "Condition",
               "name": "has_grapple_collided",
-              "sentence": "_PARAM0_ collided with _PARAM2_",
+              "sentence": "_PARAM0_ collided with _PARAM2_ and not _PARAM4_",
               "events": [
                 {
                   "disabled": false,
@@ -2021,6 +2003,18 @@
                       "parameters": [
                         "Object",
                         "Behavior"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "CollisionPoint"
+                      },
+                      "parameters": [
+                        "ledge",
+                        "Object.PointX(\"ledge_check\")",
+                        "Object.PointY(\"ledge_check\")"
                       ],
                       "subInstructions": []
                     }
@@ -2088,6 +2082,15 @@
                   "optional": false,
                   "supplementaryInformation": "PlatformBehavior::PlatformBehavior",
                   "type": "behavior"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "The ledge to not grab",
+                  "name": "ledge",
+                  "optional": false,
+                  "supplementaryInformation": "Sprite",
+                  "type": "objectList"
                 }
               ],
               "objectGroups": []
