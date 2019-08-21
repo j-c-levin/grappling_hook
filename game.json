@@ -201,10 +201,73 @@
       },
       {
         "alwaysLoaded": false,
+        "file": "NewObject-1-9.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewObject-1-9.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
         "file": "NewObject-1-5.png",
         "kind": "image",
         "metadata": "",
         "name": "NewObject-1-5.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "NewObject-1-10.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewObject-1-10.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "NewObject-1-11.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewObject-1-11.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "NewObject-1-12.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewObject-1-12.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "NewObject-1-13.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewObject-1-13.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "p1_stand.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "p1_stand.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "p1_jump.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "p1_jump.png",
         "smoothed": true,
         "userAdded": true
       }
@@ -251,8 +314,8 @@
           "layer": "",
           "locked": false,
           "name": "floor",
-          "width": 843,
-          "x": -14,
+          "width": 1656,
+          "x": -662,
           "y": 561,
           "zOrder": 1,
           "numberProperties": [],
@@ -267,8 +330,8 @@
           "locked": false,
           "name": "player",
           "width": 0,
-          "x": 421,
-          "y": 532,
+          "x": 93,
+          "y": 533,
           "zOrder": -1,
           "numberProperties": [],
           "stringProperties": [],
@@ -297,8 +360,8 @@
           "locked": false,
           "name": "platform",
           "width": 0,
-          "x": 478,
-          "y": 262,
+          "x": 743,
+          "y": 102,
           "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
@@ -312,9 +375,114 @@
           "locked": false,
           "name": "platform",
           "width": 0,
-          "x": 101,
-          "y": 115,
+          "x": -83,
+          "y": 179,
           "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "debug",
+          "width": 0,
+          "x": 515.588,
+          "y": 82.5643,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "short_platform",
+          "width": 0,
+          "x": 507,
+          "y": 275,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "short_platform",
+          "width": 0,
+          "x": 1143,
+          "y": 336,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "short_platform",
+          "width": 0,
+          "x": 1450.12,
+          "y": 187.479,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "layer": "",
+          "locked": false,
+          "name": "floor",
+          "width": 185,
+          "x": 1637,
+          "y": 561,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "platform",
+          "width": 0,
+          "x": 1886,
+          "y": 427,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "short_platform",
+          "width": 0,
+          "x": 2171,
+          "y": 236,
+          "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -389,7 +557,7 @@
                         {
                           "name": "grapple_launch",
                           "x": 58.6,
-                          "y": 15.6
+                          "y": 25
                         }
                       ],
                       "originPoint": {
@@ -416,12 +584,7 @@
           "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
-          "variables": [
-            {
-              "name": "state",
-              "value": "outwards"
-            }
-          ],
+          "variables": [],
           "behaviors": [
             {
               "name": "Tween",
@@ -443,11 +606,16 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "NewObject-1-2.png",
+                      "image": "NewObject-1-10.png",
                       "points": [
                         {
                           "name": "swing_point",
                           "x": -30,
+                          "y": 15
+                        },
+                        {
+                          "name": "rope_attach",
+                          "x": -12,
                           "y": 15
                         }
                       ],
@@ -526,6 +694,64 @@
                           "name": "ledge_right",
                           "x": 190,
                           "y": 20
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "short_platform",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [
+            {
+              "canBeGrabbed": false,
+              "name": "Platform",
+              "platformType": "NormalPlatform",
+              "type": "PlatformBehavior::PlatformBehavior",
+              "yGrabOffset": 0
+            }
+          ],
+          "animations": [
+            {
+              "name": "NewObject",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "NewObject-1-9.png",
+                      "points": [
+                        {
+                          "name": "ledge_left",
+                          "x": 10,
+                          "y": 7
+                        },
+                        {
+                          "name": "ledge_right",
+                          "x": 40,
+                          "y": 7
                         }
                       ],
                       "originPoint": {
@@ -748,268 +974,277 @@
                 }
               ],
               "events": []
-            }
-          ],
-          "parameters": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "DepartScene"
-              },
-              "parameters": [
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [],
-          "events": [
+            },
             {
               "disabled": false,
               "folded": false,
-              "type": "BuiltinCommonInstructions::ForEach",
-              "object": "platform",
+              "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": [
                 {
                   "type": {
                     "inverted": false,
-                    "value": "Create"
+                    "value": "CameraX"
                   },
                   "parameters": [
                     "",
-                    "grapple_ledge",
-                    "platform.PointX(\"ledge_right\")",
-                    "platform.PointY(\"ledge_right\")",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "grapple_ledge",
-                    "platform.PointX(\"ledge_left\")",
-                    "platform.PointY(\"ledge_left\")",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ChangeHeight"
-                  },
-                  "parameters": [
-                    "grapple_ledge",
                     "=",
-                    "platform.Height() + 15"
+                    "player.X()",
+                    "",
+                    ""
                   ],
                   "subInstructions": []
                 }
               ],
               "events": []
             }
-          ]
+          ],
+          "parameters": []
         },
         {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
           "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
+          "folded": true,
+          "name": "Create platform ledges",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
             {
-              "type": {
-                "inverted": false,
-                "value": "MouseButtonReleased"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "grapple_behaviour::player_behaviour::is_grapple_loaded"
-              },
-              "parameters": [
-                "player",
-                "player_behaviour",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "grapple_behaviour::player_behaviour::fire_grapple"
-              },
-              "parameters": [
-                "player",
-                "player_behaviour",
-                "grapple",
-                "Tween",
-                "grapple_helper",
-                "debug_text"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "grapple_behaviour::grapple_behaviour::grapple_finished"
-              },
-              "parameters": [
-                "grapple",
-                "grapple_behaviour",
-                "Tween",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "grapple_behaviour::player_behaviour::return_grapple"
-              },
-              "parameters": [
-                "player",
-                "player_behaviour",
-                "grapple",
-                "Tween",
-                "grapple_helper",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "grapple_behaviour::grapple_behaviour::can_grapple_attach"
-              },
-              "parameters": [
-                "grapple",
-                "grapple_behaviour",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "CollisionNP"
-              },
-              "parameters": [
-                "grapple",
-                "grapple_ledge",
-                "",
-                "",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "grapple_behaviour::grapple_behaviour::attach_grapple"
-              },
-              "parameters": [
-                "grapple",
-                "grapple_behaviour",
-                "Tween",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "grapple_behaviour::player_behaviour::climb_ledge"
-              },
-              "parameters": [
-                "player",
-                "player_behaviour",
-                "Tween",
-                "grapple_ledge",
-                "Tween",
-                "grapple_ledge",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "grapple_behaviour::grapple_behaviour::can_grapple_attach"
-              },
-              "parameters": [
-                "grapple",
-                "grapple_behaviour",
-                "platform",
-                "Platform",
-                "grapple_ledge",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "BuiltinCommonInstructions::Or"
-              },
-              "parameters": [],
-              "subInstructions": [
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
                 {
                   "type": {
                     "inverted": false,
-                    "value": "CollisionNP"
+                    "value": "DepartScene"
+                  },
+                  "parameters": [
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "platform",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "grapple_ledge",
+                        "platform.PointX(\"ledge_right\")",
+                        "platform.PointY(\"ledge_right\")",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "grapple_ledge",
+                        "platform.PointX(\"ledge_left\")",
+                        "platform.PointY(\"ledge_left\")",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ChangeHeight"
+                      },
+                      "parameters": [
+                        "grapple_ledge",
+                        "=",
+                        "platform.Height() + 15"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "short_platform",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "grapple_ledge",
+                        "short_platform.PointX(\"ledge_right\")",
+                        "short_platform.PointY(\"ledge_right\")",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "grapple_ledge",
+                        "short_platform.PointX(\"ledge_left\")",
+                        "short_platform.PointY(\"ledge_left\")",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ChangeHeight"
+                      },
+                      "parameters": [
+                        "grapple_ledge",
+                        "=",
+                        "platform.Height() "
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "disabled": false,
+          "folded": false,
+          "name": "Grapple",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "grapple_behaviour::player_behaviour::is_grapple_loaded"
+                  },
+                  "parameters": [
+                    "player",
+                    "player_behaviour",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "grapple_behaviour::player_behaviour::fire_grapple"
+                  },
+                  "parameters": [
+                    "player",
+                    "player_behaviour",
+                    "grapple",
+                    "Tween",
+                    "grapple_helper",
+                    "debug_text"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "grapple_behaviour::grapple_behaviour::grapple_finished"
                   },
                   "parameters": [
                     "grapple",
-                    "platform",
-                    "",
-                    "",
+                    "grapple_behaviour",
+                    "Tween",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "grapple_behaviour::player_behaviour::return_grapple"
+                  },
+                  "parameters": [
+                    "player",
+                    "player_behaviour",
+                    "grapple",
+                    "Tween",
+                    "grapple_helper",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "grapple_behaviour::grapple_behaviour::can_grapple_attach"
+                  },
+                  "parameters": [
+                    "grapple",
+                    "grapple_behaviour",
                     ""
                   ],
                   "subInstructions": []
@@ -1021,91 +1256,183 @@
                   },
                   "parameters": [
                     "grapple",
-                    "floor",
+                    "grapple_ledge",
                     "",
                     "",
                     ""
                   ],
                   "subInstructions": []
                 }
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "grapple_behaviour::grapple_behaviour::attach_grapple"
-              },
-              "parameters": [
-                "grapple",
-                "grapple_behaviour",
-                "Tween",
-                ""
               ],
-              "subInstructions": []
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "grapple_behaviour::grapple_behaviour::attach_grapple"
+                  },
+                  "parameters": [
+                    "grapple",
+                    "grapple_behaviour",
+                    "Tween",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "grapple_behaviour::player_behaviour::climb_ledge"
+                  },
+                  "parameters": [
+                    "player",
+                    "player_behaviour",
+                    "Tween",
+                    "grapple_ledge",
+                    "Tween",
+                    "grapple_ledge",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
             },
             {
-              "type": {
-                "inverted": false,
-                "value": "grapple_behaviour::player_behaviour::grapple_swing"
-              },
-              "parameters": [
-                "player",
-                "player_behaviour",
-                "Tween",
-                "grapple",
-                "grapple_behaviour",
-                "Tween",
-                ""
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "grapple_behaviour::grapple_behaviour::can_grapple_attach"
+                  },
+                  "parameters": [
+                    "grapple",
+                    "grapple_behaviour",
+                    "platform",
+                    "Platform",
+                    "grapple_ledge",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "CollisionNP"
+                      },
+                      "parameters": [
+                        "grapple",
+                        "platform",
+                        "",
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "CollisionNP"
+                      },
+                      "parameters": [
+                        "grapple",
+                        "floor",
+                        "",
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ]
+                }
               ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "grapple_behaviour::grapple_behaviour::attach_grapple"
+                  },
+                  "parameters": [
+                    "grapple",
+                    "grapple_behaviour",
+                    "Tween",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "grapple_behaviour::player_behaviour::grapple_swing"
+                  },
+                  "parameters": [
+                    "player",
+                    "player_behaviour",
+                    "Tween",
+                    "grapple",
+                    "grapple_behaviour",
+                    "Tween",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
             {
-              "type": {
-                "inverted": false,
-                "value": "grapple_behaviour::player_behaviour::can_reload"
-              },
-              "parameters": [
-                "player",
-                "player_behaviour",
-                "Tween",
-                "Tween",
-                "grapple",
-                "grapple_behaviour",
-                "Tween",
-                ""
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "grapple_behaviour::player_behaviour::can_reload"
+                  },
+                  "parameters": [
+                    "player",
+                    "player_behaviour",
+                    "Tween",
+                    "Tween",
+                    "grapple",
+                    "grapple_behaviour",
+                    "Tween",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
               ],
-              "subInstructions": []
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "grapple_behaviour::player_behaviour::reload_grapple"
+                  },
+                  "parameters": [
+                    "player",
+                    "player_behaviour",
+                    "grapple",
+                    "Tween",
+                    "grapple_helper",
+                    "debug_text",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
             }
           ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "grapple_behaviour::player_behaviour::reload_grapple"
-              },
-              "parameters": [
-                "player",
-                "player_behaviour",
-                "grapple",
-                "Tween",
-                "grapple_helper",
-                "debug_text",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
+          "parameters": []
         }
       ],
       "layers": [
