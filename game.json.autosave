@@ -863,7 +863,7 @@
                 "grapple",
                 "Tween",
                 "grapple_helper",
-                "player.PointY(\"grapple_launch\")"
+                "debug_text"
               ],
               "subInstructions": []
             }
@@ -983,6 +983,7 @@
                 "grapple",
                 "Tween",
                 "grapple_helper",
+                "debug_text",
                 ""
               ],
               "subInstructions": []
@@ -1040,40 +1041,6 @@
                     "grapple_ledge.PointY(\"Center\") - player.Height()",
                     "\"easeOutQuad\"",
                     "200",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "VarObjetTxt"
-                  },
-                  "parameters": [
-                    "grapple",
-                    "state",
-                    "=",
-                    "\"swinging\""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "grapple",
                     ""
                   ],
                   "subInstructions": []
@@ -1429,7 +1396,7 @@
               "fullName": "Return grapple",
               "functionType": "Action",
               "name": "return_grapple",
-              "sentence": "Return _PARAM2_ to _PARAM0_ and remove the helper _PARAM4_",
+              "sentence": "Return _PARAM2_ to _PARAM0_",
               "events": [
                 {
                   "disabled": false,
@@ -1526,13 +1493,12 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "Tween::StopTween"
+                        "value": "Tween::RemoveTween"
                       },
                       "parameters": [
                         "grapple",
                         "tween",
-                        "\"grapple_launch\"",
-                        ""
+                        "\"grapple_launch\""
                       ],
                       "subInstructions": []
                     },
@@ -1545,11 +1511,24 @@
                         "Object",
                         "tween",
                         "\"player_swing\"",
-                        "grapple.PointX(\"player_swing\")",
-                        "grapple.PointY(\"player_swing\")",
+                        "grapple.X()",
+                        "grapple.Y()",
                         "\"easeOutQuad\"",
                         "200",
                         ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "grapple_behaviour::player_behaviour::SetPropertystate"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "\"swinging\""
                       ],
                       "subInstructions": []
                     }
@@ -1620,7 +1599,7 @@
               "fullName": "Reload grapple",
               "functionType": "Action",
               "name": "reload_grapple",
-              "sentence": "Reload _PARAM0_ with _PARAM2_ and remove _PARAM4_",
+              "sentence": "Reload _PARAM0_ and remove _PARAM2_ and _PARAM4_",
               "events": [
                 {
                   "disabled": false,
@@ -1775,6 +1754,19 @@
                     {
                       "type": {
                         "inverted": false,
+                        "value": "Distance"
+                      },
+                      "parameters": [
+                        "Object",
+                        "grapple",
+                        "20",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
                         "value": "Tween::Exists"
                       },
                       "parameters": [
@@ -1783,22 +1775,21 @@
                         "\"player_swing\""
                       ],
                       "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "Distance"
-                      },
-                      "parameters": [
-                        "Object",
-                        "grapple",
-                        "50",
-                        ""
-                      ],
-                      "subInstructions": []
                     }
                   ],
                   "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::RemoveTween"
+                      },
+                      "parameters": [
+                        "Object",
+                        "tween",
+                        "\"player_swing\""
+                      ],
+                      "subInstructions": []
+                    },
                     {
                       "type": {
                         "inverted": false,
@@ -1897,6 +1888,14 @@
               "extraInformation": [],
               "hidden": false,
               "name": "distance_to_travel"
+            },
+            {
+              "value": "something",
+              "type": "String",
+              "label": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "state"
             }
           ]
         },
