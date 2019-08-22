@@ -330,8 +330,8 @@
           "locked": false,
           "name": "player",
           "width": 0,
-          "x": 93,
-          "y": 533,
+          "x": 67,
+          "y": 469,
           "zOrder": -1,
           "numberProperties": [],
           "stringProperties": [],
@@ -543,7 +543,7 @@
           ],
           "animations": [
             {
-              "name": "NewObject",
+              "name": "idle",
               "useMultipleDirections": false,
               "directions": [
                 {
@@ -552,18 +552,41 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "NewObject-1-1.png",
-                      "points": [
-                        {
-                          "name": "grapple_launch",
-                          "x": 58.6,
-                          "y": 25
-                        }
-                      ],
+                      "image": "p1_stand.png",
+                      "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 20,
-                        "y": 25
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "jump",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "p1_jump.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
                       },
                       "centerPoint": {
                         "automatic": true,
