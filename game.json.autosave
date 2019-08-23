@@ -13,7 +13,7 @@
     "macExecutableFilename": "",
     "orientation": "landscape",
     "packageName": "com.example.gamename",
-    "projectFile": "C:\\Users\\joshu\\Documents\\GDevelop projects\\grappling_hook\\game.json",
+    "projectFile": "/Users/joshualevin/Documents/GDevelop Projects/grappling_hook/game.json",
     "scaleMode": "linear",
     "sizeOnStartupMode": "adaptWidth",
     "useExternalSourceFiles": false,
@@ -210,15 +210,6 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "NewObject-1-5.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "NewObject-1-5.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
         "file": "NewObject-1-10.png",
         "kind": "image",
         "metadata": "",
@@ -369,6 +360,15 @@
         "name": "p1_walk11.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "NewObject-1-5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewObject-1-5.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -401,7 +401,7 @@
         "gridWidth": 32,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 0.3
+        "zoomFactor": 0.612
       },
       "objectsGroups": [],
       "variables": [],
@@ -429,8 +429,8 @@
           "locked": false,
           "name": "player",
           "width": 0,
-          "x": 67,
-          "y": 469,
+          "x": 42,
+          "y": 512,
           "zOrder": -1,
           "numberProperties": [],
           "stringProperties": [],
@@ -630,6 +630,21 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "platform",
+          "width": 0,
+          "x": -372,
+          "y": 324,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -679,14 +694,14 @@
               "type": "Tween::TweenBehavior"
             },
             {
+              "name": "player_animations",
+              "type": "player_animations::player_animations"
+            },
+            {
               "name": "player_behaviour",
               "type": "grapple_behaviour::player_behaviour",
               "grapple_loaded": true,
               "grapple_distance": 100
-            },
-            {
-              "name": "player_behaviour2",
-              "type": "player_behaviour::player_behaviour"
             }
           ],
           "animations": [
@@ -701,11 +716,17 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "p1_stand.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "grapple_launch",
+                          "x": 67.806,
+                          "y": 51.3759
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 38.5781,
+                        "y": 45.5547
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -730,11 +751,17 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "p1_jump.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "grapple_launch",
+                          "x": 67.806,
+                          "y": 51.3759
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 38.5781,
+                        "y": 45.5547
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -753,17 +780,23 @@
               "useMultipleDirections": false,
               "directions": [
                 {
-                  "looping": false,
-                  "timeBetweenFrames": 0.08,
+                  "looping": true,
+                  "timeBetweenFrames": 0.04,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
                       "image": "p1_walk01.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "grapple_launch",
+                          "x": 67.806,
+                          "y": 51.3759
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 38.5781,
+                        "y": 45.5547
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -776,11 +809,17 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "p1_walk02.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "grapple_launch",
+                          "x": 67.806,
+                          "y": 51.3759
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 38.5781,
+                        "y": 45.5547
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -793,11 +832,17 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "p1_walk03.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "grapple_launch",
+                          "x": 67.806,
+                          "y": 51.3759
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 38.5781,
+                        "y": 45.5547
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -810,11 +855,17 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "p1_walk04.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "grapple_launch",
+                          "x": 67.806,
+                          "y": 51.3759
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 38.5781,
+                        "y": 45.5547
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -827,11 +878,17 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "p1_walk05.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "grapple_launch",
+                          "x": 67.806,
+                          "y": 51.3759
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 38.5781,
+                        "y": 45.5547
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -844,11 +901,17 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "p1_walk06.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "grapple_launch",
+                          "x": 67.806,
+                          "y": 51.3759
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 38.5781,
+                        "y": 45.5547
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -861,11 +924,17 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "p1_walk07.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "grapple_launch",
+                          "x": 67.806,
+                          "y": 51.3759
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 38.5781,
+                        "y": 45.5547
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -878,11 +947,17 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "p1_walk08.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "grapple_launch",
+                          "x": 67.806,
+                          "y": 51.3759
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 38.5781,
+                        "y": 45.5547
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -895,11 +970,17 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "p1_walk09.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "grapple_launch",
+                          "x": 67.806,
+                          "y": 51.3759
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 38.5781,
+                        "y": 45.5547
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -912,11 +993,17 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "p1_walk10.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "grapple_launch",
+                          "x": 67.806,
+                          "y": 51.3759
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 38.5781,
+                        "y": 45.5547
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -929,11 +1016,17 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "p1_walk11.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "grapple_launch",
+                          "x": 67.806,
+                          "y": 51.3759
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 38.5781,
+                        "y": 45.5547
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -1285,70 +1378,6 @@
               "disabled": false,
               "folded": false,
               "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "KeyPressed"
-                  },
-                  "parameters": [
-                    "",
-                    "Left"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "FlipX"
-                  },
-                  "parameters": [
-                    "player",
-                    "yes"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "KeyPressed"
-                  },
-                  "parameters": [
-                    "",
-                    "Right"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "FlipX"
-                  },
-                  "parameters": [
-                    "player",
-                    "no"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": [
                 {
@@ -1368,11 +1397,11 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "player_behaviour::player_behaviour::animate"
+                    "value": "player_animations::player_animations::animate"
                   },
                   "parameters": [
                     "player",
-                    "player_behaviour2",
+                    "player_animations",
                     "PlatformerObject",
                     ""
                   ],
@@ -1524,7 +1553,7 @@
           "colorR": 74,
           "creationTime": 0,
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "name": "Grapple",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1812,159 +1841,6 @@
                   "subInstructions": []
                 }
               ],
-              "events": [
-                {
-                  "disabled": false,
-                  "folded": false,
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "PosX"
-                      },
-                      "parameters": [
-                        "player",
-                        ">",
-                        "grapple.X()"
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "AddForceXY"
-                      },
-                      "parameters": [
-                        "player",
-                        "-300",
-                        "0",
-                        "1"
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "events": []
-                },
-                {
-                  "disabled": false,
-                  "folded": false,
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "PosX"
-                      },
-                      "parameters": [
-                        "player",
-                        "<",
-                        "grapple.X()"
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "AddForceXY"
-                      },
-                      "parameters": [
-                        "player",
-                        "300",
-                        "0",
-                        "1"
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "events": []
-                }
-              ]
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "BuiltinCommonInstructions::Or"
-                  },
-                  "parameters": [],
-                  "subInstructions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "CollisionNP"
-                      },
-                      "parameters": [
-                        "player",
-                        "floor",
-                        "",
-                        "",
-                        ""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "CollisionNP"
-                      },
-                      "parameters": [
-                        "player",
-                        "platform",
-                        "",
-                        "",
-                        ""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "CollisionNP"
-                      },
-                      "parameters": [
-                        "player",
-                        "short_platform",
-                        "",
-                        "",
-                        ""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "PlatformBehavior::IsOnFloor"
-                      },
-                      "parameters": [
-                        "player",
-                        "PlatformerObject"
-                      ],
-                      "subInstructions": []
-                    }
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Arreter"
-                  },
-                  "parameters": [
-                    "player"
-                  ],
-                  "subInstructions": []
-                }
-              ],
               "events": []
             }
           ],
@@ -2008,12 +1884,12 @@
           "type": "grapple_behaviour::grapple_behaviour"
         },
         {
-          "name": "player_behaviour",
-          "type": "grapple_behaviour::player_behaviour"
+          "name": "player_animations",
+          "type": "player_animations::player_animations"
         },
         {
-          "name": "player_behaviour2",
-          "type": "player_behaviour::player_behaviour"
+          "name": "player_behaviour",
+          "type": "grapple_behaviour::player_behaviour"
         }
       ]
     }
@@ -3151,7 +3027,7 @@
       "description": "",
       "extensionNamespace": "",
       "fullName": "",
-      "name": "player_behaviour",
+      "name": "player_animations",
       "shortDescription": "",
       "tags": "",
       "version": "",
@@ -3159,8 +3035,8 @@
       "eventsBasedBehaviors": [
         {
           "description": "Animates the player properly",
-          "fullName": "Player Behaviour",
-          "name": "player_behaviour",
+          "fullName": "Player Animations",
+          "name": "player_animations",
           "objectType": "Sprite",
           "eventsFunctions": [
             {
@@ -3285,6 +3161,70 @@
                     }
                   ],
                   "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "FlipX"
+                      },
+                      "parameters": [
+                        "Object",
+                        "yes"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "Right"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "FlipX"
+                      },
+                      "parameters": [
+                        "Object",
+                        "no"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
                 }
               ],
               "parameters": [
@@ -3303,7 +3243,7 @@
                   "description": "Behavior",
                   "name": "Behavior",
                   "optional": false,
-                  "supplementaryInformation": "player_behaviour::player_behaviour",
+                  "supplementaryInformation": "player_animations::player_animations",
                   "type": "behavior"
                 },
                 {
