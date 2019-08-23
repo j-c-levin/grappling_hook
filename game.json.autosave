@@ -369,6 +369,15 @@
         "name": "NewObject-1-5.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "NewObject-1-14.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewObject-1-14.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -562,25 +571,10 @@
           "height": 0,
           "layer": "",
           "locked": false,
-          "name": "platform",
-          "width": 0,
-          "x": 1886,
-          "y": 427,
-          "zOrder": 9,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
           "name": "short_platform",
           "width": 0,
-          "x": 2171,
-          "y": 236,
+          "x": 2145,
+          "y": 307,
           "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
@@ -1069,23 +1063,23 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "NewObject-1-10.png",
+                      "image": "NewObject-1-14.png",
                       "points": [
                         {
                           "name": "swing_point",
-                          "x": -30,
-                          "y": 15
+                          "x": -24.3555,
+                          "y": 20.1067
                         },
                         {
                           "name": "rope_attach",
-                          "x": -12,
-                          "y": 15
+                          "x": -8.8762,
+                          "y": 20.8579
                         }
                       ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 15,
-                        "y": 15
+                        "x": 22.79,
+                        "y": 22.6007
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -1096,20 +1090,20 @@
                       "customCollisionMask": [
                         [
                           {
-                            "x": 1.25366,
-                            "y": 9.5874
+                            "x": 30.5284,
+                            "y": 2.10286
                           },
                           {
-                            "x": 31,
-                            "y": 10
+                            "x": 44.8752,
+                            "y": 13.8835
                           },
                           {
-                            "x": 29.9866,
-                            "y": 19.0906
+                            "x": 44.8622,
+                            "y": 27.3665
                           },
                           {
-                            "x": 1.34644,
-                            "y": 18.6292
+                            "x": 28.7448,
+                            "y": 42.4492
                           }
                         ]
                       ]
@@ -1369,7 +1363,7 @@
           "colorR": 74,
           "creationTime": 0,
           "disabled": false,
-          "folded": false,
+          "folded": true,
           "name": "Character controls",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1553,7 +1547,7 @@
           "colorR": 74,
           "creationTime": 0,
           "disabled": false,
-          "folded": false,
+          "folded": true,
           "name": "Grapple",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
