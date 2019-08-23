@@ -363,21 +363,21 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "NewObject-1-5.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "NewObject-1-5.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
         "file": "NewObject-1-14.png",
         "kind": "image",
         "metadata": "",
         "name": "NewObject-1-14.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "NewObject-1-5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewObject-1-5.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -1201,13 +1201,8 @@
                       "image": "NewObject-1-9.png",
                       "points": [
                         {
-                          "name": "ledge_left",
-                          "x": 10,
-                          "y": 7
-                        },
-                        {
-                          "name": "ledge_right",
-                          "x": 40,
+                          "name": "ledge",
+                          "x": 25,
                           "y": 7
                         }
                       ],
@@ -1252,7 +1247,7 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 20,
+                        "x": 22,
                         "y": 15
                       },
                       "centerPoint": {
@@ -1397,6 +1392,7 @@
                     "player",
                     "player_animations",
                     "PlatformerObject",
+                    "Tween",
                     ""
                   ],
                   "subInstructions": []
@@ -1413,7 +1409,7 @@
           "colorR": 74,
           "creationTime": 0,
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "name": "Create platform ledges",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1501,22 +1497,8 @@
                       "parameters": [
                         "",
                         "grapple_ledge",
-                        "short_platform.PointX(\"ledge_right\")",
-                        "short_platform.PointY(\"ledge_right\")",
-                        ""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "Create"
-                      },
-                      "parameters": [
-                        "",
-                        "grapple_ledge",
-                        "short_platform.PointX(\"ledge_left\")",
-                        "short_platform.PointY(\"ledge_left\")",
+                        "short_platform.PointX(\"ledge\")",
+                        "short_platform.PointY(\"ledge\")",
                         ""
                       ],
                       "subInstructions": []
@@ -1529,11 +1511,31 @@
                       "parameters": [
                         "grapple_ledge",
                         "=",
-                        "platform.Height() "
+                        "short_platform.Height() + 10"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ChangeWidth"
+                      },
+                      "parameters": [
+                        "grapple_ledge",
+                        "=",
+                        "short_platform.Width() + 10"
                       ],
                       "subInstructions": []
                     }
                   ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [],
                   "events": []
                 }
               ]
@@ -1547,7 +1549,7 @@
           "colorR": 74,
           "creationTime": 0,
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "name": "Grapple",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -3105,6 +3107,30 @@
                             "behaviour"
                           ],
                           "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::Exists"
+                          },
+                          "parameters": [
+                            "Object",
+                            "tween",
+                            "\"player_swing\""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::Exists"
+                          },
+                          "parameters": [
+                            "Object",
+                            "tween",
+                            "\"climb_ledge\""
+                          ],
+                          "subInstructions": []
                         }
                       ]
                     }
@@ -3247,6 +3273,15 @@
                   "name": "behaviour",
                   "optional": false,
                   "supplementaryInformation": "PlatformBehavior::PlatformerObjectBehavior",
+                  "type": "behavior"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "",
+                  "name": "tween",
+                  "optional": false,
+                  "supplementaryInformation": "Tween::TweenBehavior",
                   "type": "behavior"
                 }
               ],
