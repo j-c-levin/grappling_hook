@@ -1306,7 +1306,7 @@
           "colorR": 74,
           "creationTime": 0,
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "name": "Utilities",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1353,7 +1353,7 @@
           "colorR": 74,
           "creationTime": 0,
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "name": "Character controls",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1404,7 +1404,7 @@
           "colorR": 74,
           "creationTime": 0,
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "name": "Create platform ledges",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1555,7 +1555,7 @@
           "colorR": 74,
           "creationTime": 0,
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "name": "Grapple",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -2320,19 +2320,6 @@
                         ""
                       ],
                       "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "grapple_behaviour::player_behaviour::SetPropertystate"
-                      },
-                      "parameters": [
-                        "Object",
-                        "Behavior",
-                        "=",
-                        "\"swinging\""
-                      ],
-                      "subInstructions": []
                     }
                   ],
                   "events": []
@@ -2842,14 +2829,6 @@
               "extraInformation": [],
               "hidden": false,
               "name": "distance_to_travel"
-            },
-            {
-              "value": "something",
-              "type": "String",
-              "label": "",
-              "extraInformation": [],
-              "hidden": true,
-              "name": "state"
             }
           ]
         },

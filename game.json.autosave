@@ -2320,19 +2320,6 @@
                         ""
                       ],
                       "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "grapple_behaviour::player_behaviour::SetPropertystate"
-                      },
-                      "parameters": [
-                        "Object",
-                        "Behavior",
-                        "=",
-                        "\"swinging\""
-                      ],
-                      "subInstructions": []
                     }
                   ],
                   "events": []
@@ -2416,7 +2403,7 @@
                         "ledge.PointX(\"Center\")",
                         "ledge.PointY(\"Center\") - Object.Height() - 10",
                         "\"easeOutQuad\"",
-                        "3000",
+                        "300",
                         ""
                       ],
                       "subInstructions": []
@@ -2455,7 +2442,7 @@
                         "ledge.PointX(\"Center\")",
                         "ledge.PointY(\"Center\") - Object.Height() + 25",
                         "\"easeOutQuad\"",
-                        "3000",
+                        "300",
                         ""
                       ],
                       "subInstructions": []
@@ -2842,14 +2829,6 @@
               "extraInformation": [],
               "hidden": false,
               "name": "distance_to_travel"
-            },
-            {
-              "value": "something",
-              "type": "String",
-              "label": "",
-              "extraInformation": [],
-              "hidden": true,
-              "name": "state"
             }
           ]
         },
