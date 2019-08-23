@@ -13,7 +13,7 @@
     "macExecutableFilename": "",
     "orientation": "landscape",
     "packageName": "com.example.gamename",
-    "projectFile": "/Users/joshualevin/Documents/GDevelop Projects/grappling_hook/game.json",
+    "projectFile": "C:\\Users\\joshu\\Documents\\GDevelop projects\\grappling_hook\\game.json",
     "scaleMode": "linear",
     "sizeOnStartupMode": "adaptWidth",
     "useExternalSourceFiles": false,
