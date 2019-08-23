@@ -192,15 +192,6 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "NewObject-1-8.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "NewObject-1-8.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
         "file": "NewObject-1-9.png",
         "kind": "image",
         "metadata": "",
@@ -378,6 +369,15 @@
         "name": "NewObject-1-5.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "NewObject-1-8.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewObject-1-8.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -440,7 +440,7 @@
           "width": 0,
           "x": 42,
           "y": 512,
-          "zOrder": -1,
+          "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1067,13 +1067,8 @@
                       "points": [
                         {
                           "name": "swing_point",
-                          "x": -24.3555,
-                          "y": 20.1067
-                        },
-                        {
-                          "name": "rope_attach",
-                          "x": -8.8762,
-                          "y": 20.8579
+                          "x": -15,
+                          "y": 22
                         }
                       ],
                       "originPoint": {
@@ -1311,7 +1306,7 @@
           "colorR": 74,
           "creationTime": 0,
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "name": "Utilities",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1358,7 +1353,7 @@
           "colorR": 74,
           "creationTime": 0,
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "name": "Character controls",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1475,7 +1470,7 @@
                       "parameters": [
                         "grapple_ledge",
                         "=",
-                        "platform.Height() + 15"
+                        "platform.Height() + 10"
                       ],
                       "subInstructions": []
                     }
@@ -1535,7 +1530,18 @@
                   "folded": false,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [],
-                  "actions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "grapple_ledge"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
                   "events": []
                 }
               ]
@@ -1607,6 +1613,18 @@
               "folded": false,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "grapple_behaviour::grapple_behaviour::can_grapple_attach"
+                  },
+                  "parameters": [
+                    "grapple",
+                    "grapple_behaviour",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
                 {
                   "type": {
                     "inverted": false,
@@ -2295,8 +2313,8 @@
                         "Object",
                         "tween",
                         "\"player_swing\"",
-                        "grapple.X()",
-                        "grapple.Y()",
+                        "grapple.PointX(\"swing_point\")",
+                        "grapple.PointY(\"swing_point\")",
                         "\"easeOutQuad\"",
                         "300",
                         ""
@@ -2371,7 +2389,20 @@
                   "disabled": false,
                   "folded": false,
                   "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "PosY"
+                      },
+                      "parameters": [
+                        "Object",
+                        ">",
+                        "ledge.Y()"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
                   "actions": [
                     {
                       "type": {
@@ -2383,9 +2414,48 @@
                         "tween",
                         "\"climb_ledge\"",
                         "ledge.PointX(\"Center\")",
-                        "ledge.PointY(\"Center\") - Object.Height()",
+                        "ledge.PointY(\"Center\") - Object.Height() - 10",
                         "\"easeOutQuad\"",
-                        "300",
+                        "3000",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "PosY"
+                      },
+                      "parameters": [
+                        "Object",
+                        "<",
+                        "ledge.Y()"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectPositionTween"
+                      },
+                      "parameters": [
+                        "Object",
+                        "tween",
+                        "\"climb_ledge\"",
+                        "ledge.PointX(\"Center\")",
+                        "ledge.PointY(\"Center\") - Object.Height() + 25",
+                        "\"easeOutQuad\"",
+                        "3000",
                         ""
                       ],
                       "subInstructions": []
@@ -2507,7 +2577,7 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "Tween::Exists"
+                        "value": "Tween::HasFinished"
                       },
                       "parameters": [
                         "Object",
@@ -2790,11 +2860,11 @@
           "objectType": "Sprite",
           "eventsFunctions": [
             {
-              "description": "The grapple has reached its destination and not attached",
+              "description": "The grapple has reached its destination",
               "fullName": "Grapple finished",
               "functionType": "Condition",
               "name": "grapple_finished",
-              "sentence": "_PARAM0_ has reached its destination and not attached",
+              "sentence": "_PARAM0_ has reached its destination",
               "events": [
                 {
                   "disabled": false,
@@ -2810,17 +2880,6 @@
                         "Object",
                         "tween",
                         "\"grapple_launch\""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": true,
-                        "value": "grapple_behaviour::grapple_behaviour::Propertyis_attached"
-                      },
-                      "parameters": [
-                        "Object",
-                        "Behavior"
                       ],
                       "subInstructions": []
                     }
@@ -2937,7 +2996,7 @@
               "fullName": "Attach the grapple",
               "functionType": "Action",
               "name": "attach_grapple",
-              "sentence": "Attach _PARAM0_ and stop it moving",
+              "sentence": "Attach _PARAM0_",
               "events": [
                 {
                   "disabled": false,
